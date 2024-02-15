@@ -1,0 +1,71 @@
+<html>
+  <link rel="stylesheet" href="/styles/theme.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <head>
+    <title>Book details</title>
+  </head>
+  <body>
+    <div class="bg-image"></div>
+    <div class="content-item" style="height: 70%">
+      <% if(bookData.length!=0){ %>
+      <table
+        style="
+          align-items: center;
+          text-align: justify;
+          width: 50%;
+          margin: auto;
+        "
+      >
+        <tr>
+          <th>Book Name: <%=bookData[0].book_name %></th>
+        </tr>
+        <tr>
+          <td>ISBN:<%=bookData[0].ISBN %></td>
+        </tr>
+        <tr>
+          <td>Author:<%=bookData[0].author_name %></td>
+        </tr>
+        <tr>
+          <td>No of Books:<%=bookData[0].no_of_books %></td>
+        </tr>
+        <tr>
+          <td>Rack No:<%=bookData[0].rack_no %></td>
+        </tr>
+        <tr>
+          <td>Price:<%=bookData[0].price %></td>
+        </tr>
+      </table>
+      <a
+        href="/users/issue?id=<%=bookData[0].ISBN %>&title=<%=bookData[0].ISBN %>"
+      >
+        Issue this book
+      </a>
+      <% if(userData.length!=0){ %>
+      <table
+        style="
+          align-items: center;
+          text-align: justify;
+          width: 50%;
+          margin: auto;
+        "
+      >
+        <tr>
+          <th>Username: <%=userData[0].username %></th>
+        </tr>
+        <tr>
+          <td>First Name:<%=userData[0].fname %></td>
+        </tr>
+        <tr>
+          <td>Last Name:<%=userData[0].lname %></td>
+        </tr>
+        <tr>
+          <td>Fine:0</td>
+        </tr>
+        
+      </table>
+    </div>
+    <% } %> <% } else { %>
+    <h3>Book not found</h3>
+    <% } %>
+  </body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />  
+    <link rel="stylesheet" href="/styles/theme.css">
+  <title>Lending History</title>
+
+  <style>
+    h2{
+        font-size: larger;
+        margin: auto;
+        padding: 10px;
+        text-align: center;
+        color: rgb(0, 38, 255);
+    }
+    body
+    {
+		background-size: cover;
+		background-repeat: no-repeat; 
+	}
+
+    table {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+ td,  th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+ tr:nth-child(even){background-color: #f2f2f2;}
+ tr:nth-child(odd){background-color: #dfdede;}
+
+ tr:hover {background-color: #ddd;}
+
+ th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #170bb9;
+  color: white;
+}
+    </style>
+</head>
+<body>
+    <div class="table-data">
+<h2>Lending Logs</h2>
+    <table border="1">
+        <tr>
+            <th> ID</th>
+            <th>ISBN</th>
+            <th>Title</th>
+            <th>Date of Issue</th>
+            <th>Date of Expiry</th>
+            <th>Fine</th>
+            <th>Return</th>
+        </tr>
+        
+        <%
+        if(bData.length!=0){
+        var i=1;
+        bData.forEach(function(data){
+        %>
+        <tr>
+            <td><%=data.id; %></td>
+            <td><%=data.ISBN %></td>
+            <td><%=data.Title %></td>
+            <td> <%=new Date(data.issue_date).toDateString()  %></td>
+            <td><%=new Date(data.expiry_date).toDateString()  %></td>
+            <td><%=data.fine %></td>
+            <td><a href="/books/return?id=<%=data.id%>">Return</a></td>
+        </tr>
+        <%  i++; }) %>
+        <% } else{ %>
+            <tr>
+                <td colspan="7">No Data Found</td>
+            </tr>
+        <% } %>
+    </table>
+    </div>
+</body>
+</html>

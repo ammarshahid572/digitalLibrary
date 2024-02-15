@@ -1,0 +1,43 @@
+<html>
+<head>
+    <link rel="stylesheet" href="/styles/theme.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+         h2{
+        text-align: center;
+        text-decoration: none;
+        font-family: 'Times New Roman', Times, serif;
+        margin-left: auto;
+        }
+        .additional{
+			text-align: center;
+		}
+		.additional a{
+			border: none;
+            background-color: green;
+ 			color:honeydew;
+  			padding: 15px 32px;
+  			text-align: center;
+ 		 	text-decoration: none;
+  			display: inline-block;
+  			font-size: 16px;
+		}
+        
+    </style>
+</head>
+<body>
+    <div class="bg-image"></div>
+    <div class="topNav" style="color:white">
+    <p style="float:right; color: white;"><%=member %></p>
+    </div>
+
+    
+    <div class="content-item">
+    <button onclick="document.location='/admin/approvallist'" style="width: 50%; height: 100px; margin-bottom: 20px;font-size: large;">Aproval List</button>
+    <button onclick="document.location='/admin/booklist'" style="width: 50%; height: 100px; margin-bottom: 20px;font-size: large;">Book List</button>
+    <button onclick="document.location='/admin/scanQR'" style="width: 50%; height: 100px; margin-bottom: 20px;font-size: large;">Scan ISBN</button>
+  
+    </div>
+</div>
+</body>
+</html>

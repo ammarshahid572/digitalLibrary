@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/styles/theme.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Books</title>
+    <script>
+        function required() {
+          var value = document.getElementById("title").value;
+          if (value == ""){
+            document.getElementById("title").style.backgroundColor = "pink";
+          return false;}
+          var value = document.getElementById("isbn").value;
+          if (value == ""){
+            document.getElementById("isbn").style.backgroundColor = "pink";
+          return false;}
+          var value = document.getElementById("author_name").value;
+          if (value == ""){
+            document.getElementById("author_name").style.backgroundColor = "pink";
+          return false;}
+          var value = document.getElementById("count").value;
+          if (value == ""){
+            document.getElementById("count").style.backgroundColor = "pink";
+          return false;}
+          var value = document.getElementById("rack").value;
+          if (value == ""){
+            document.getElementById("rack").style.backgroundColor = "pink";
+          return false;}
+      return true;
+        }
+      </script>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <div class="bg-image"></div>
+    <div class= "content-item">
+        <h2 style="color:black">Editing Book</h2>
+
+    <%
+    prevdata.forEach(function(data){
+    %>
+    <div class="iform">
+    <form action="/admin/updateBook" method="post">
+    <input type="hidden" name="isbn" id="isbn" value="<%=data.ISBN %>">
+    <input type="text" name= "title"  id= "title" value="<%=data.book_name %>"><br>
+    <input type="text" name= "author_name" id= "author_name" value="<%=data.author_name %>"><br>
+    <input type="text" name= "isbn2" id= "isbn2" value="<%=data.ISBN %>"><br>
+    <input type="text" name= "count"  id= "count" value="<%=data.no_of_books %>"><br>
+    <input type="text" name="rack" id="rack" value="<%=data.rack_no %>"><br>
+    <input type= "hidden" name="price" id= "price" value="<%=data.price %>"><br>
+    <input type="submit" id="submit" value="Update">
+    </form>
+    <br>
+    <br>
+    <a href= "/admin/delete?id=<%=data.ISBN %>" style="color: white; background-color: rgb(255, 0, 0); padding: 5px;"> DELETE</a>
+    </div>
+</div>
+   
+    <%   }); %>
+   
+
+    
+</body>
+</html>

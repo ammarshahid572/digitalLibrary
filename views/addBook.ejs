@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="/styles/theme.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add book</title>
+    <script>
+        function required() {
+          var value = document.getElementById("title").value;
+          if (value == ""){
+            document.getElementById("title").style.backgroundColor = "pink";
+          return false;}
+          var value = document.getElementById("isbn").value;
+          if (value == ""){
+            document.getElementById("isbn").style.backgroundColor = "pink";
+          return false;}
+          var value = document.getElementById("author_name").value;
+          if (value == ""){
+            document.getElementById("author_name").style.backgroundColor = "pink";
+          return false;}
+          var value = document.getElementById("count").value;
+          if (value == ""){
+            document.getElementById("count").style.backgroundColor = "pink";
+          return false;}
+          var value = document.getElementById("rack").value;
+          if (value == ""){
+            document.getElementById("rack").style.backgroundColor = "pink";
+          return false;}
+      return true;
+        }
+      </script>
+    <style>
+      form {
+        margin: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="bg-image"></div>
+    <div class="content-item">
+      <h2 style="color: black">Add New Book</h2>
+      <div class="iform">
+        <form id= "form1" action="/admin/addBook" method="post" onsubmit="required()">
+          <input
+            type="text"
+            name="title"
+            id="title"
+            placeholder="title"
+            
+          /><br />
+          <input
+            type="text"
+            name="isbn"
+            id="isbn"
+            placeholder="isbn"
+            
+          /><br />
+          <input
+            type="text"
+            name="author_name"
+            id="author_name"
+            placeholder="Author Name"
+            
+          /><br />
+          <input
+            type="number"
+            name="count"
+            id="count"
+            placeholder="Amount of books"
+            
+          /><br />
+          <input
+            type="number"
+            name="rack"
+            id="rack"
+            placeholder="Rack no"
+            
+          /><br />
+          <input type="submit" value="ADD" />
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

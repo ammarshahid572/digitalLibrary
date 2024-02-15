@@ -1,0 +1,39 @@
+<html>
+<head>
+    <link rel="stylesheet" href="/styles/theme.css" />
+    <style>
+         h2{
+        text-align: center;
+        text-decoration: none;
+        font-family: 'Times New Roman', Times, serif;
+        margin-left: auto;
+        }
+        .additional{
+			text-align: center;
+		}
+		.additional a{
+			border: none;
+            background-color: green;
+ 			color:honeydew;
+  			padding: 15px 32px;
+  			text-align: center;
+ 		 	text-decoration: none;
+  			display: inline-block;
+  			font-size: 16px;
+		}
+    </style>
+</head>
+<body>
+    <div class="topNav">
+        <button style="float:right; margin:4px" onclick="location.href='/logout';">Logout</button>
+                <p style= "float:right; color:white;">
+                <%=member %>
+                  </p>
+    </div>
+    <div class="content-item" style="background-color: rgba(250,250,250, 0);">
+        <div style="padding: 35px">
+    <button onclick="document.location='/admin/booklist'" style="width: 50%; height: 100px; margin:auto; font-size: large;">Book List</button>
+    </div>
+</div>
+</body>
+</html>

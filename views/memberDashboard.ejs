@@ -1,0 +1,25 @@
+<html>
+  <head>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="stylesheet" href="/styles/theme.css" />
+  </head>
+  <body>
+    <div class="bg-image"></div>
+	<div class="topNav">
+    <button style="float:right; margin:4px" onclick="location.href='/logout';">Logout</button>
+			<p style= "float:right; color:white;">
+			<%=member %>
+		  	</p>
+	</div>
+    <div class="content-item" style="background-color: rgba(250,250,250, 0);">
+      <div style="padding: 35px">
+		<button onclick="document.location='/users/history'" style="width: 50%; height: 100px; margin-bottom: 20px;font-size: large;">Logs</button>
+		<button onclick="document.location='/users/booklist'" style="width: 50%; height: 100px; margin-bottom: 20px; font-size: large;">booklist</button>
+		
+		<button onclick="document.location='/users/scanQR'" style="width: 50%; height: 100px; margin-bottom: 20px; font-size: large;">Scan ISBN</button>
+		</div>
+      
+    </div>
+  </body>
+</html>

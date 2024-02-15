@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+            h2{
+            text-align: center;
+            text-decoration: none;
+            font-family: 'Times New Roman', Times, serif;
+            margin-left: auto;
+        }
+        body
+    {
+		background-size: cover;
+		background-repeat: no-repeat; 
+	}
+		.additional{
+			text-align: center;
+		}
+		.additional a{
+			border: none;
+ 			color:rgb(22, 25, 158);
+  			padding: 15px 32px;
+  			text-align: center;
+ 		 	text-decoration: none;
+  			display: inline-block;
+  			font-size: 16px;
+		}
+		.grid-container {
+  		display: grid;
+  		grid-template-columns: auto auto;
+		}
+        table {
+            color: rgb(0, 0, 0);
+            font-family: Arial, Helvetica, sans-serif;
+         border-collapse: collapse;
+         width: 100%;
+        }
+        td, th {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+        tr:nth-child(even){background-color: #f2f2f293;}
+        tr:nth-child(odd){background-color: #f2f2f271;}
+         tr:hover {background-color: rgb(15, 167, 159);}
+         th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: #0415aa;
+            color: white;}
+		</style>
+    
+  <title>Approval Lists</title>
+</head>
+<body>
+    <div class="table-data">
+<h2>Users Pending for Approval</h2>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>username</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Member Type</th>
+            <th>Approve</th>
+            <th>Reject</th>
+        </tr>
+        
+        <%
+        if(bData.length!=0){
+        var i=1;
+        bData.forEach(function(data){
+        %>
+        <tr>
+            <td><%=data.id; %></td>
+            <td> <%=data.username %></td>
+            <td><%=data.fname %></td>
+            <td><%=data.lname %></td>
+            <td><%=data.email %></td>
+            <td><%=data.mem_type %></td>
+            <td><a href="/admin/approveMember?id=<%=data.id%>">Approve</a></td>
+            <td><a href="/admin/deleteMember?id=<%=data.id%>">Reject</a></td>
+        </tr>
+        <%  i++; }) %>
+        <% } else{ %>
+            <tr>
+                <td colspan="7">No Data Found</td>
+            </tr>
+        <% } %>
+    </table>
+    </div>
+</body>
+</html>

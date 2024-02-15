@@ -1,0 +1,219 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  .h2{
+    align-content: center;
+    margin-left: auto;
+    margin-right: auto;
+
+  }
+
+  .bg-image {
+    /* The image used */
+       background: white;
+    
+    
+    /* Full height */
+    height: 100%; 
+    
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  .content-item{
+    
+    color: white;
+    font-weight: bold;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    width: 80%;
+    padding: 30px;
+    text-align: center;
+  }
+
+  .iform {
+    font-size: larger;
+    width: 300px;
+    margin: auto;
+    margin-bottom:30px;
+    font-family: Tahoma, Geneva, sans-serif;
+  }
+  .iform h1 {
+    
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+    color: #000000;
+    font-size: 30px;
+    padding: 10px 0 10px 0;
+    border: black;
+    
+  }
+  .iform input[type="password"],
+  .iform input[type="text"],
+  .iform input[type="email"],
+  .iform input[type="number"],
+  .iform select{
+    font-size: medium;
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #dddddd;
+    margin-bottom: 15px;
+    box-sizing:border-box;
+    text-align: center;
+  }
+  
+  
+  .iform input[type="submit"] {
+    font-size: medium;
+    width: 100%;
+    padding: 15px;
+    background-color: #535b63;
+    border: 0;
+    box-sizing: border-box;
+    cursor: pointer;
+    font-weight: bold;
+    color: #ffffff;
+    font-family: 'Times New Roman', Times, serif;
+  }
+  .iform a{
+    margin-left: auto;
+    margin-right: auto;
+    background-color: blue;
+    text-decoration: none;
+    color: white;
+  }
+
+  .button-class1{
+    font-size: medium;
+    font-family: 'Times New Roman', Times, serif;
+    text-decoration: none;
+    width: 100%;
+    padding: 15px;
+    background-color: #535b63;
+    border: 0;
+    box-sizing: border-box;
+    cursor: pointer;
+    font-weight: bold;
+    color: #ffffff;
+  }
+
+  .button-class2{
+    width: 100%;
+    padding: 15px;
+    background-color: #535b63;
+    border: 0;
+    box-sizing: border-box;
+    cursor: pointer;
+    font-weight: bold;
+    color: #ffffff;
+  }
+
+  .button-important{
+    margin: auto;
+    float: right;
+    margin-right: 25px;
+    padding: 15px;
+    text-decoration: none;
+    background-color: rgba(255, 2, 2, 0.603);
+    border: 0;
+    box-sizing: border-box;
+    cursor: pointer;
+    font-weight: bold;
+    color: #ffffff;
+  }  
+  .topNav{
+    position:absolute;
+    top:0%;
+    width:100%;
+    padding-left: 20 px;
+    background-color: rgb(0,0,139);
+  }
+
+  button {
+      
+      background-color: blue;
+      color: white;
+      padding: 10px;
+      align-content: center;
+      text-decoration: none;
+      margin: 20px;
+  }
+  button :hover{
+      background-color: cyan;
+  }
+
+  table {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+   td,  th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+
+  td{
+    color:black;
+  }
+  
+   tr:nth-child(even){background-color: #f2f2f2;}
+   tr:nth-child(odd){background-color: #dfdede;}
+  
+   tr:hover {background-color: #ddd;}
+  
+   th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #170bb9;
+    color: white;
+  }
+
+
+  form {
+    width: 300px;
+    margin: 0 auto;
+    font-family: Tahoma, Geneva, sans-serif;
+}
+form h1 {
+    text-align: center;
+    color: #4d4d4d;
+    font-size: 24px;
+    padding: 20px 0 20px 0;
+}
+form input[type="password"],
+form input[type="text"],
+form input[type="email"],
+form select {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #dddddd;
+    margin-bottom: 15px;
+    box-sizing:border-box;
+}
+form input[type="submit"] {
+    width: 100%;
+    padding: 15px;
+    background-color: #535b63;
+    border: 0;
+    box-sizing: border-box;
+    cursor: pointer;
+    font-weight: bold;
+    color: #ffffff;
+}
+form input:invalid {
+  border: 3px solid red;
+}

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/styles/theme.css">
+    <style>
+    h2{
+        font-size: larger;
+        margin: auto;
+        padding: 10px;
+        text-align: center;
+        color: honeydew;
+    }
+    body
+    {
+		background-size: cover;
+		background-repeat: no-repeat; 
+	}
+
+    table {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+ td,  th {
+     color:rgb(0, 0, 0);
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+ tr:nth-child(even){background-color: #f2f2f2;}
+ tr:nth-child(odd){background-color: #dfdede;}
+
+ tr:hover {background-color: #ddd;}
+
+ th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #170bb9;
+  color: white;
+}
+    </style>
+  <title>Booklist</title>
+</head>
+<body>
+    <div class="table-data">
+<h2>Booklist</h2>
+    <table border="1">
+        <tr>
+            <th> Accession No</th>
+            <th>Title</th>
+            <th>ISBN</th>
+            <th>Author</th>
+            <th>No of Books</th>
+            <th>Rack No</th>
+            
+            <th> Issue</th>
+        </tr>
+        
+        <%
+        if(bData.length!=0){
+        var i=1;
+        bData.forEach(function(data){
+        %>
+        <tr>
+            <td><%=i; %></td>
+            <td><%=data.book_name %></td>
+            <td><%=data.ISBN %></td>
+            <td> <%=data.author_name %></td>
+            <td><%=data.no_of_books %></td>
+            <td><%=data.rack_no %></td>
+            <td><a href="/users/issue?id=<%=data.ISBN%>&title=<%=data.book_name%>">Issue</a></td>
+        </tr>
+        <%  i++; }) %>
+        <% } else{ %>
+            <tr>
+                <td colspan="7">No Data Found</td>
+            </tr>
+        <% } %>
+    </table>
+    </div>
+</body>
+</html>
